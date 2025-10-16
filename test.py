@@ -12,7 +12,7 @@ class Calculette():
     def soustraction(self):
         return self.__a-self.__b
 
-    def mutliplication(self):
+    def multiplication(self):
         resultat = 0
         for i in range (self.__b) :
             resultat += self.__a
