@@ -16,8 +16,8 @@ class Calculette():
 
     def mutliplication(self):
         resultat = 0
-        for i in range (self.b) :
-            resultat += self.a
+        for i in range (self.__b) :
+            resultat += self.__a
         return resultat
 
 
