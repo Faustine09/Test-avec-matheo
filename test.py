@@ -1,3 +1,5 @@
+from tkiteasy import *
+
 class Calculette():
 
     def __init__(self, a=None, b = None):
@@ -29,4 +31,13 @@ class Calculette():
     def nbpremier(self):
         pass
 
+    def __str__(self):
+        self.__g = ouvrirFenetre(800, 600)
+        self.__g.dessinerRectangle(50, 50, 500, 100, "white")
+        self.__g.attendreClic()
+        self.__g.fermerFenetre()
+        return
 
+
+calcul = calculette()
+print(calcul)
