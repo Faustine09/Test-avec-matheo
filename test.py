@@ -14,7 +14,7 @@ class Calculette():
     def soustraction(self):
         return self.__a-self.__b
 
-    def mutliplication(self):
+    def multiplication(self):
         resultat = 0
         for i in range (self.__b) :
             resultat += self.__a
@@ -22,17 +22,69 @@ class Calculette():
 
 
     def division(self):
-        pass
+        a = self.__a
+        b = self.__b
+        resultat = 0
+        if b != 0 :
+            while  a >= b :
+                a -= b
+                resultat += 1
+            a = self.multiplication(a,10)
+            while a >= b :
+                a -= b
+                resultat += 0.1
+            a = self.multiplication (a,10)
+            while a >= b :
+                a -= b
+                resultat += 0.01
+        else :
+            return None
+        return resultat
 
     def exponentielle(self):
-        pass
+        resultat = 1
+        term = 1
+        for i in range (1,4) :
+            term *= self.__a /i
+            resultat += term
+        return resultat
+
 
     def fibonacci(self):
-        pass
+        if self.__a == 0 or self.__a == 1 :
+            return True
+        else :
+            a = 0
+            b = 1
+            while True :
+                c = a + b
+                if c == self.__a :
+                    return True
+                elif c > self.__a :
+                    return False
+                else :
+                    a = b
+                    b = c
+
 
     def nbpremier(self):
-        pass
+        if self.__a <= 1 :
+            return False
+        else:
+            premier = True
+            for i in range(2, self.__a):
+                multiple = i
+                while multiple <= self.__a:
+                    if multiple == self.__a:
+                        premier = False
+                        break
+                    multiple = multiple + i
+                if not premier:
+                    break
+        return premier
 
+    def supr (self) :
+        pass
     def __str__(self):
         self.__g = ouvrirFenetre(600, 600)
         self.__g.dessinerRectangle(50, 50, 500, 100, "lavenderblush")
