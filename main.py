@@ -1,16 +1,21 @@
-# This is a sample Python script.
+from class_objet import *
 
-# Press Maj+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+calcul = Calculette()
+calcul.afficher()
+clic = None
+
+while not calcul.fermerBool():
+    clic = calcul.recupClic()
+    if 50 <= clic.x <= 315 and 200 <= clic.y <= 560:
+        nb = calcul.nombre(clic)
+        if nb != None and nb != -1:
+            calcul.afficherNb(nb)
+        elif nb == -1:
+            calcul.enter(clic)
+    if 385 <= clic.x <= 505 and 205 <= clic.y <= 465:
+        op = calcul.operateur(clic)
+        if op != None:
+            calcul.afficherOp(op)
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+calcul.fermer()
