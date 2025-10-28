@@ -85,6 +85,8 @@ class Calculette():
 
     def supr (self) :
         pass
+
+
     def __str__(self):
         self.__g = ouvrirFenetre(600, 600)
         self.__g.dessinerRectangle(50, 50, 500, 100, "lavenderblush")
