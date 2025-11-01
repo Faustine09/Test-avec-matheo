@@ -161,12 +161,13 @@ class Calculette():
         self.__g.actualiser()
 
     def afficherOp(self, op):
-        self.__g.supprimer(self.__objtxt)
-        self.__op = op
-        self.__txt = self.__txt + (f" {self.__op} ")
-        self.__opBool = True
-        self.__objtxt = self.__g.afficherTexte(self.__txt, 300, 100, "darkblue", 24)
-        self.__g.actualiser()
+         if not self.__opBool:
+            self.__g.supprimer(self.__objtxt)
+            self.__op = op
+            self.__txt = self.__txt + (f" {self.__op} ")
+            self.__opBool = True
+            self.__objtxt = self.__g.afficherTexte(self.__txt, 300, 100, "darkblue", 24)
+            self.__g.actualiser()
 
     def enter(self, clic):
         result = None
@@ -195,6 +196,4 @@ class Calculette():
         self.__g.supprimer(self.__objtxt)
         self.__objtxt = self.__g.afficherTexte(str(result), 300, 100, "darkblue", 24)
         self.__g.actualiser()
-        self.__g.attendreClic()
-        self.supr()
         return
