@@ -23,6 +23,12 @@ class Calculette():
             resultat += self.__a
         return resultat
 
+    def multiplication2(self,a,b):
+        resultat = 0
+        for i in range(b):
+            resultat += a
+        return resultat
+
     def division(self):
         a = self.__a
         b = self.__b
@@ -31,11 +37,11 @@ class Calculette():
             while  a >= b :
                 a -= b
                 resultat += 1
-            a = self.multiplication(a,10)
+            a = self.multiplication2(a,10)
             while a >= b :
                 a -= b
                 resultat += 0.1
-            a = self.multiplication (a,10)
+            a = self.multiplication2(a,10)
             while a >= b :
                 a -= b
                 resultat += 0.01
