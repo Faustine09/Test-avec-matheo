@@ -2,9 +2,10 @@ from class_objet import *
 
 calcul = Calculette()
 calcul.afficher()
+fermer = False
 
 clic = calcul.recupClic()
-while not calcul.fermerBool():
+while not fermer:
     if 50 <= clic.x <= 315 and 200 <= clic.y <= 560:
         nb = calcul.nombre(clic)
         if nb != None and nb != -1:
@@ -21,10 +22,7 @@ while not calcul.fermerBool():
         elif op == "AC":
             calcul.supr()
         clic = calcul.recupClic()
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
+    elif clic.x >= 570 and clic.y <= 30:
+        fermer = True
 
 calcul.fermer()

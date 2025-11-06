@@ -110,6 +110,8 @@ class Calculette():
         self.__g.dessinerRectangle(145, 485, 170, 75, "lavenderblush")
         self.__g.afficherTexte("0", 87.5, 522.5, "darkblue", 24)
         self.__g.afficherTexte("Enter", 230, 522.5, "darkblue", 24)
+        self.__g.dessinerLigne(590, 10, 570, 30, "red", 6)
+        self.__g.dessinerLigne(570, 10, 590, 30, "red", 6)
 
         for i in range(2):
             for j in range(4):
@@ -119,11 +121,7 @@ class Calculette():
         self.__objtxt = self.__g.afficherTexte("", 300, 100, "darkblue", 24)
 
 
-    def fermerBool(self):
-        pass
-
     def fermer(self):
-        self.__g.attendreClic()
         self.__g.fermerFenetre()
 
     def recupClic(self):
@@ -176,7 +174,6 @@ class Calculette():
             self.__g.actualiser()
 
     def enter(self, clic):
-        result = None
         self.__a = int(self.__a)
         if self.__b is not None :
             self.__b = int(self.__b)
