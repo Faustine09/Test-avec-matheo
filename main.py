@@ -2,7 +2,6 @@ from class_objet import *
 
 calcul = Calculette()
 calcul.afficher()
-clic = None
 
 clic = calcul.recupClic()
 while not calcul.fermerBool():
